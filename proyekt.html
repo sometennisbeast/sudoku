@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="proyekt.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--מסך פתיחה-->
+    <div id="opening">
+        <img src="sudokus-japonais-niveau-11.jpg" alt="b" id="ph1">
+        <h1>Sudoku</h1>
+        <label for="name">User Name</label>
+        <input type="text" id="name">  
+        <p id="p1"></p>
+        <br>
+        <label for="password">password</label>
+        <input type="text" id="password">
+        <p id='p2'></p>
+        <br>
+        <button onclick="checkUser()" id="b1">Enter</button>
+    </div>
+
+<!--דף הכנה למשחק עם הרמות-->
+    <div id="level">
+        <h1>Welcome abcd</h1>
+        <p>Level difficulty</p>
+        <button value="1" onclick="level(this.value)">1</button>
+        <button value="2" onclick="level(this.value)">2</button>
+        <button value="3" onclick="level(this.value)">3</button>
+    </div>
+
+    <!--הצגת המשחק-->
+    <div id="playing">
+        <h1>Good Luck</h1>
+        <br>
+        <br>
+    <table id="t1">
+        <tr>
+        <td><input type="text" class="box" id="b00" disabled></td>
+        <td><input type="text" class="box" id="b01" disabled></td>
+        <td><input type="text" class="box" id="b02" disabled></td>
+        <td><input type="text" class="box" id="b03" disabled></td>
+        <td><input type="text" class="box" id="b04" disabled></td>
+        <td><input type="text" class="box" id="b05" disabled></td>
+        <td><input type="text" class="box" id="b06" disabled></td>
+        <td><input type="text" class="box" id="b07" disabled></td>
+        <td><input type="text" class="box" id="b08" disabled></td>
+    </tr>
+        <tr>
+            <td><input type="text" class="box" id="b10" disabled></td>
+            <td><input type="text" class="box" id="b11" disabled></td>
+            <td><input type="text" class="box" id="b12" disabled></td>
+            <td><input type="text" class="box" id="b13" ></td>
+            <td><input type="text" class="box" id="b14"></td>
+            <td><input type="text" class="box" id="b15"></td>
+            <td><input type="text" class="box" id="b16"></td>
+            <td><input type="text" class="box" id="b17"></td>
+            <td><input type="text" class="box" id="b18"></td>
+        </tr>
+        <tr>
+            <td><input type="text" class="box" id="b20"></td>
+            <td><input type="text" class="box" id="b21"></td>
+            <td><input type="text" class="box" id="b22"></td>
+            <td><input type="text" class="box" id="b23"></td>
+            <td><input type="text" class="box" id="b24"></td>
+            <td><input type="text" class="box" id="b25"></td>
+            <td><input type="text" class="box" id="b26"></td>
+            <td><input type="text" class="box" id="b27"></td>
+            <td><input type="text" class="box" id="b28"></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="box" id="b30"></td>
+        <td><input type="text" class="box" id="b31"></td>
+        <td><input type="text" class="box" id="b32"></td>
+        <td><input type="text" class="box" id="b33"></td>
+        <td><input type="text" class="box" id="b34"></td>
+        <td><input type="text" class="box" id="b35"></td>
+        <td><input type="text" class="box" id="b36"></td>
+        <td><input type="text" class="box" id="b37"></td>
+        <td><input type="text" class="box" id="b38"></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="box" id="b40"></td>
+        <td><input type="text" class="box" id="b41"></td>
+        <td><input type="text" class="box" id="b42"></td>
+        <td><input type="text" class="box" id="b43"></td>
+        <td><input type="text" class="box" id="b44"></td>
+        <td><input type="text" class="box" id="b45"></td>
+        <td><input type="text" class="box" id="b46"></td>
+        <td><input type="text" class="box" id="b47"></td>
+        <td><input type="text" class="box" id="b48"></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="box" id="b50"></td>
+        <td><input type="text" class="box" id="b51"></td>
+        <td><input type="text" class="box" id="b52"></td>
+        <td><input type="text" class="box" id="b53"></td>
+        <td><input type="text" class="box" id="b54"></td>
+        <td><input type="text" class="box" id="b55"></td>
+        <td><input type="text" class="box" id="b56"></td>
+        <td><input type="text" class="box" id="b57"></td>
+        <td><input type="text" class="box" id="b58"></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="box" id="b60"></td>
+        <td><input type="text" class="box" id="b61"></td>
+        <td><input type="text" class="box" id="b62"></td>
+        <td><input type="text" class="box" id="b63"></td>
+        <td><input type="text" class="box" id="b64"></td>
+        <td><input type="text" class="box" id="b65"></td>
+        <td><input type="text" class="box" id="b66"></td>
+        <td><input type="text" class="box" id="b67"></td>
+        <td><input type="text" class="box" id="b68"></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="box" id="b70"></td>
+        <td><input type="text" class="box" id="b71"></td>
+        <td><input type="text" class="box" id="b72"></td>
+        <td><input type="text" class="box" id="b73"></td>
+        <td><input type="text" class="box" id="b74"></td>
+        <td><input type="text" class="box" id="b75"></td>
+        <td><input type="text" class="box" id="b76"></td>
+        <td><input type="text" class="box" id="b77"></td>
+        <td><input type="text" class="box" id="b78"></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="box" id="b80"></td>
+        <td><input type="text" class="box" id="b81"></td>
+        <td><input type="text" class="box" id="b82"></td>
+        <td><input type="text" class="box" id="b83"></td>
+        <td><input type="text" class="box" id="b84"></td>
+        <td><input type="text" class="box" id="b85"></td>
+        <td><input type="text" class="box" id="b86"></td>
+        <td><input type="text" class="box" id="b87"></td>
+        <td><input type="text" class="box" id="b88"></td>
+        </tr>
+    </table>
+    <button onclick="Finish()">finish</button>
+    <button onclick="again()">again</button>
+
+    </div>
+    
+    
+    
+   <script src="proyekt.js"></script> 
+</body>
+</html>
